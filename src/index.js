@@ -3,6 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {BrowserRouter} from 'react-router-dom';
+import 'font-awesome/css/font-awesome.min.css'
+
+const app = (
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

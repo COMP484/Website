@@ -9,21 +9,19 @@
   
   .App-header {
     background-color: #282c34;
-    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
-    /* padding: 60px; */
     text-align: center;
     align-items: center;
     justify-content: left;
     font-size: calc(10px + 2vmin);
-    color: white;
     
   
   }
   
   .App-body{
     background-color: #282c34;
+    padding: 60px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -37,3 +35,82 @@
   .App-link {
     color: #09d3ac;
   }
+  .sidebar{
+    width: 980px;
+    text-align: left;
+    padding: 20px;
+  }
+  .slider {
+    top: 1vw;
+    position: relative;
+    width: 900px;
+    margin: 0 auto;
+    height: 500px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .text{
+    margin-right: 1000px;
+  }
+
+  .cardContainer{
+    display: inline;
+  }
+
+  .cardOne{
+    padding: 50px;
+    justify-content: space-around;
+    /* margin-left: 5px; */
+  }
+
+  .cardTwo{
+    padding: 50px;
+    justify-content: space-around;
+  } 
+
+  .slider-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .slide {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .arrow {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform ease-in .1s;
+  }
+  
+
+  .nextArrow {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    z-index: 999;
+    color: #fff;
+  }
+  
+  .backArrow {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    z-index: 999;
+    color: #fff;
+  }
+  
+  .fa-arrow-right:before, .fa-arrow-left:before {
+    color: #222
+  }
+  
