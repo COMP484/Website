@@ -114,3 +114,34 @@
     color: #222
   }
   
+  .pacman{
+    display: flex;
+  }
+  .pong{
+    display: flex;
+  }
+  .snake{
+    display: flex;
+  }
+  .frogger{
+    display: flex;
+  }
+  .space{
+    display: flex;
+  }
+  .game_image{
+    padding: 30px;
+    border-radius: 30%;
+    height: 200px;
+    weight: 100px;
+  }
+
+  .text_place{
+    padding: 100px;
+  }
+
+  .start_button{
+    text-align: center;
+    background: white;
+    border-radius: 25%;
+  }
