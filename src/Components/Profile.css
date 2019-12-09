@@ -1,0 +1,66 @@
+/*------ HTML Tags ------*/
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+h1, h2, h3{
+    margin: 5px auto;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    font-size: 26px;
+}
+
+h3{
+    font-size: 22px;
+}
+
+img{
+    font-size: 15px;
+    color: #F00;
+}
+
+section{
+    width: 50%;
+
+}
+aside{
+    background-color: green;
+    width: 40%;
+    padding: 0 35px;
+}
+
+q{
+    font-style: italic;
+}
+
+/* ID */
+#container_profile{
+    border: 1px white solid;
+    width: 50%;
+    padding: 20px 100px 30px 100px;
+}
+
+/*----- Classes ------*/
+
+
+.bold{
+    font-weight: bold;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.clear{
+    clear: both;
+}

@@ -16,23 +16,14 @@ function App() {
     <div className="App">
       <header className="App-header">
       <Navi></Navi>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/home" component={Navi}/>
-  
-
-        </Switch>
       </header>
       <div className = "App-body">
         <Switch>
-          <Route path="/game" component={Game}/>  
-        </Switch>
-      </div>
-      
-      <div className = "App-body">
-        <Switch>
-          <Route path="/profile" component={Profile}/>  
-        </Switch>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/home" component={Navi}/>
+        <Route path="/game" component={Game}/> 
+        <Route path="/profile" component={Profile}/> 
+      </Switch>
       </div>
     
       </div>

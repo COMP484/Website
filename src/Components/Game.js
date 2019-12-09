@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import Button from 'react-bootstrap/Button'
+import 'bootstrap/dist/css/bootstrap.min.css';
 export class Game extends Component {
     render() {
         return (
@@ -12,9 +13,11 @@ export class Game extends Component {
                         <p>this is game section</p>
                     </aside>
                 </div>
-                
-                <div class = "start_button">
-                    <p>start game</p>
+
+                <div>
+                <Button variant="primary" size="lg" block>
+                    Game start
+                </Button>
                 </div>
                 
                 <div class ="pong">
@@ -26,8 +29,10 @@ export class Game extends Component {
                     </aside>
                 </div>
 
-                <div class = "start_button">
-                    <p>start game</p>
+                <div>
+                <Button variant="primary" size="lg" block>
+                    Game start
+                </Button>
                 </div>
 
                 <div class ="snake">
@@ -40,8 +45,10 @@ export class Game extends Component {
                 
                 </div>
 
-                <div class = "start_button">
-                    <p>start game</p>
+                <div>
+                <Button variant="primary" size="lg" block>
+                    Game start
+                </Button>
                 </div>
 
                 <div class ="frogger">
@@ -53,8 +60,10 @@ export class Game extends Component {
                     </aside>
                 </div>
 
-                <div class = "start_button">
-                    <p>start game</p>
+                <div>
+                <Button variant="primary" size="lg" block>
+                    Game start
+                </Button>
                 </div>
 
                 <div class ="space">
@@ -67,8 +76,10 @@ export class Game extends Component {
 
                 </div>
 
-                <div class = "start_button">
-                    <p>start game</p>
+                <div>
+                <Button variant="primary" size="lg" block>
+                    Game start
+                </Button>
                 </div>
                 
             </div>
