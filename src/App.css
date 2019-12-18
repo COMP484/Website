@@ -135,6 +135,9 @@
 
   .text_place{
     padding: 100px;
+    background-color: turquoise;
+    border-radius: 30%;
+    border-color: black 10px;
   }
 
 #button {
