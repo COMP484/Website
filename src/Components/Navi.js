@@ -30,10 +30,10 @@ export class Navi extends Component {
           <IconButton component={Link} to= "/" edge="start"  color="inherit" aria-label="menu" id = "button">
               Home
           </IconButton>
-          <IconButton component={Link} to= "/Game" edge="start"  color="inherit" aria-label="menu" id = "button">
+          <IconButton component={Link} to= "/Game" edge="start"  color="inherit" aria-label="menu" >
               Game
           </IconButton>
-          <IconButton component={Link} to= "/Profile" edge="start"  color="inherit" aria-label="menu"id = "button">
+          <IconButton component={Link} to= "/Profile" edge="start"  color="inherit" aria-label="menu">
               Profile
           </IconButton>
         </Toolbar>

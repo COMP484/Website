@@ -3,6 +3,8 @@ import Slideshow from './Slideshow';
 import Noteone from './NoteOne';
 import Notetwo from './NoteTwo';
 
+
+
 export class Home extends Component {
     render() {
         return (

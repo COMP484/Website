@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Slide from './Slide'
-import LeftArrow from './LeftArrowComponet'
-import RightArrow from './RightArrowComponents'
+import LeftArrow from './LeftArrow'
+import RightArrow from './RightArrow'
 
-export default class Slidshow extends Component {
+export class Slidshow extends Component{
   constructor(props) {
     super(props)
 
@@ -15,32 +15,32 @@ export default class Slidshow extends Component {
         "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/desert.jpg",
         "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/mountains.jpg"
       ],
-      currentIndex: 0,
-      translateValue: 0
+      index: 0,
+      change: 0
     }
   }
   
-  goToPrevSlide = () => {
-    if(this.state.currentIndex === 0)
+  goback = () => {
+    if(this.state.index === 0)
     return;
   
-  this.setState(prevState => ({
-    currentIndex: prevState.currentIndex - 1,
-    translateValue: prevState.translateValue + this.slideWidth()
+  this.setState(previous => ({
+    index: previous.index - 1,
+    change: previous.change + this.slideWidth()
   }))  
   }
   
-  goToNextSlide = () => {
-    if(this.state.currentIndex === this.state.images.length - 1) {
+  gonext = () => {
+    if(this.state.index === this.state.images.length - 1) {
       return this.setState({
-        currentIndex: 0,
-        translateValue: 0
+        index: 0,
+        change: 0
       })
     }
    
-    this.setState(prevState => ({
-      currentIndex: prevState.currentIndex + 1,
-      translateValue: prevState.translateValue + -(this.slideWidth())
+    this.setState(previous => ({
+      index: previous.index + 1,
+      change: previous.change + -(this.slideWidth())
     }));
   }
 
@@ -55,7 +55,7 @@ slideWidth = () => {
         <div className="slider-wrapper"
         
           style={{
-            transform: `translateX(${this.state.translateValue}px)`,
+            transform: `translateX(${this.state.change}px)`,
           }}>
             {
               this.state.images.map((image, i) => (
@@ -65,13 +65,14 @@ slideWidth = () => {
         </div>
         
         <LeftArrow 
-         goToPrevSlide={this.goToPrevSlide}
+         goback={this.goback}
         />
-
         <RightArrow 
-         goToNextSlide={this.goToNextSlide}    
+         gonext={this.gonext}    
         />
       </div>
     );
   }
 }
+
+export default Slidshow

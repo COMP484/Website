@@ -1,19 +1,15 @@
 /*------ HTML Tags ------*/
 p{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 h1, h2, h3{
-    margin: 5px auto;
+    margin: 10px auto;
 }
 
 h1{
     text-align: center;
-}
-
-h2{
-    font-size: 26px;
 }
 
 h3{
@@ -39,18 +35,17 @@ q{
     font-style: italic;
 }
 
-/* ID */
-#container_profile{
-    border: 1px white solid;
+/*------ IDs ------*/
+#container{
+    /* border: 1px white solid; */
     width: 50%;
     padding: 20px 100px 30px 100px;
 }
 
 /*----- Classes ------*/
-
-
-.bold{
+.header-bold{
     font-weight: bold;
+    font-size: 32px;
 }
 
 .left{
