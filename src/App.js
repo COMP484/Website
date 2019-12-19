@@ -9,9 +9,12 @@ import Navi from './Components/Navi';
 import Profile from './Components/Profile';
 import Game from './Components/Game';
 import Home from './Components/Home';
+
 function App() {
+  
   return (
     <Router>
+
     <div className="App">
       <header className="App-header">
         {/* put navi always on the top */}

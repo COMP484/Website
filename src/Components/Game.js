@@ -8,6 +8,7 @@ export class Game extends Component {
             <div>
                 <h1 id="game_title">pacman</h1>
                 <div class ="pacman">
+                    {/* image from glitch */}
                     <img src="https://cdn.glitch.com/d9c9199f-96e8-49b7-957a-282b4597a023%2Fpac.png?v=1576716625453"
                     alt="new" id ="game_image_pac"/>
                     
@@ -27,7 +28,8 @@ export class Game extends Component {
 
                 <div>
                 {/* target="_blank" href={''} */}
-                <Button variant="primary" size="lg" block>
+                {/* button designed by bootstrap */}
+                <Button variant="primary" size="lg" block target="_blank" href={'/games/pacman'}>
                     Game start
                 </Button>
                 </div>
@@ -48,8 +50,7 @@ export class Game extends Component {
                 </div>
 
                 <div>
-                {/* target="_blank" href={''} */}
-                <Button variant="primary" size="lg" block>
+                <Button variant="primary" size="lg" block target="_blank" href={'/games/indexsnakegame.html'}>
                     Game start
                 </Button>
                 </div>
@@ -66,7 +67,7 @@ export class Game extends Component {
 
                 <div>
                 {/* target="_blank" href={''} */}
-                <Button variant="primary" size="lg" block>
+                <Button variant="primary" size="lg" block target="_blank" href={'/games/space-invaders'}>
                     Game start
                 </Button>
                 </div>
