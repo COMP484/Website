@@ -2,7 +2,8 @@
 var config = {
     type: Phaser.AUTO,
     width: 800,
-    height: 600,
+    height: 500,
+    parent: 'game',
     physics: {
         default: 'arcade',
         arcade: {
@@ -149,7 +150,9 @@ function die(alien, bullets){
 function playerDie(player, bullets){
     console.log("die!!");
      player.setVisible(false);
- 
+     player.destroy();
+     scoreText = this.add.text(200,200, 'YOU LOST. :(', {fontSize: '64px', fill: 'red'});
+     gameEnd = true;
  }
 
 /* where we define animation and interaction in our game updates every frame*/
@@ -200,7 +203,7 @@ function shootBullet(game, player) {
 function alienShoot(game, alien) {
     if (gameEnd) return;
         bullet = alienbull.getLast();
-        if (bullet) { // a bullet exists
+        if (bullet && alien.visible) { // a bullet exists
             bullet.setActive(true);
             bullet.setVisible(true);
             
