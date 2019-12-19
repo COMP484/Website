@@ -1,9 +1,8 @@
-
-var assetsDir = '../pacman/assets';
+var assetsDir = './assets';
 import Ghost from "./sprites/Ghost.js";
 import Pacman from "./sprites/Pacman.js";
 
-var game = new Phaser.Game(448, 496, Phaser.AUTO);
+var game = new Phaser.Game(448, 496, Phaser.AUTO, "game");
 
 var Game = function (game) {
 
@@ -12,8 +11,8 @@ var Game = function (game) {
     this.tileset = null;
 
     this.pacman = null;
-
     this.ghosts = null;
+    this.entrance = null;
 
     this.safetile = 14;
     this.gridsize = 16;
@@ -49,6 +48,7 @@ Game.prototype = {
         // Tile/map assets
         this.load.image('tiles', assetsDir + '/pacman-tiles.png');
         this.load.tilemap('map', assetsDir + '/pacman-map.json', null, Phaser.Tilemap.TILED_JSON);
+        this.load.image('entrance', assetsDir + '/objects/entrance.png');
 
         // Sound assets
         this.load.audio('waka', assetsDir + '/sounds/waka.mp3');
@@ -58,16 +58,16 @@ Game.prototype = {
         this.pacman.preload(this);
 
         // Preload ghost assets
-        this.inky = new Ghost('inky', {x: (13 * 16) + 8, y: (11 * 16) + 8});
+        this.inky = new Ghost('inky', {x: (13 * 16) + 8, y: (14 * 16) + 8});
         this.inky.preload(this);
 
-        this.blinky = new Ghost('blinky', {x: 40, y: 40});
+        this.blinky = new Ghost('blinky', {x: (13 * 16) + 8, y: (14 * 16) + 8});
         this.blinky.preload(this);
 
-        this.clyde = new Ghost('clyde', {x: 294, y: 224});
+        this.clyde = new Ghost('clyde', {x: (13 * 16) + 8, y: (14 * 16) + 8});
         this.clyde.preload(this);
 
-        this.pinky = new Ghost('pinky', {x: 340, y: 280});
+        this.pinky = new Ghost('pinky', {x: (13 * 16) + 8, y: (14 * 16) + 8});
         this.pinky.preload(this);
 
     },
@@ -77,14 +77,22 @@ Game.prototype = {
         this.map = this.add.tilemap('map');
         this.tileset = this.map.addTilesetImage('pacman-tiles', 'tiles');
 
-        this.layer = this.map.createLayer('Pacman');
+        this.layer = this.map.createLayer('maze');
+
+        // Sprites should collide with everything except the safe tiles/dots
+        this.map.setCollisionByExclusion([14, 7, 35, 36], true, this.layer);
+
+        // Entrance for ghosts
+        this.entrance = this.add.physicsGroup();
+        this.map.createFromTiles(36, this.safetile, 'entrance', this.layer, this.entrance);
+        this.entrance.setAll('body.checkCollision.down', false); // let ghosts go through
+        this.physics.arcade.enable(this.entrance);
+        this.entrance.setAll('body.immovable', true);
+        this.entrance.setAll('body.moves', false);
 
         this.setupDots();
         this.setupPacman();
         this.setupGhosts();
-
-        // Sprites should collide with everything except the safe tiles/dots
-        this.map.setCollisionByExclusion([this.safetile, 7, 35], true, this.layer);
 
         this.cursors = this.input.keyboard.createCursorKeys();
         this.scoreText = this.add.text(5, 0, 'Score: ' + this.score, {font: '10pt monospace', fill: 'white'});
@@ -137,10 +145,13 @@ Game.prototype = {
     },
     
     eatSuperDot:  function (pacman, superDot) {
+        
         superDot.kill();
         if (this.superDots.total === 0) {
             this.superDots.callAll('revive');
         }
+
+        this.showPoints(5, {x: superDot.x, y: superDot.y});
 
         this.superEaten = true;
         this.score += 5;
@@ -155,15 +166,21 @@ Game.prototype = {
 
     killPacman: function(pacman, ghost) {
         pacman.kill();
-        this.add.text(100, 496 / 2, "You died!\nBetter luck next time.", {fill: 'red', font: '15pt monospace', backgroundColor: 'black'});
+        this.add.text(100, 496 / 2, "You died!\nBetter luck next time.", {fill: 'red', align: 'center', font: '15pt monospace', backgroundColor: 'black'});
     },
 
     killGhost: function(pacman, ghost) {
         ghost.kill();
         this.score += 10;
+        this.showPoints(10, {x: ghost.x, y: ghost.y});
     },
 
-  stopGhost: function(ghost, wall) {
+    showPoints: function(points, coords) {
+        var pointsText = this.add.text(coords.x, coords.y, "+" + points, {fill: 'white', font: '8pt monospace'});
+        setTimeout(() => {pointsText.alpha = 0; pointsText.destroy();}, 350);
+    },
+
+    stopGhost: function(ghost, wall) {
         if (this.inky.sprite == ghost) {
               this.inky.turnDirection = "NONE";
         } else if (this.blinky.sprite == ghost) {
@@ -203,10 +220,11 @@ Game.prototype = {
 
         this.physics.arcade.overlap(this.pacman.sprite, this.dots, this.eatDot, null, this);
         this.physics.arcade.collide(this.pacman.sprite, this.layer);
+        this.physics.arcade.collide(this.pacman.sprite, this.entrance);
         
         // Ghost collision behavior
         this.physics.arcade.collide(this.ghosts, this.layer, this.stopGhost, null, this);
-        this.physics.arcade.collide(this.ghosts, this.ghosts, this.stopGhost, null, this);
+        // this.physics.arcade.collide(this.ghosts, this.ghosts, this.stopGhost, null, this);
         
         // Update sprite movements
         this.inky.update(this);

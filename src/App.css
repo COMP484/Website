@@ -111,50 +111,57 @@
     color: #222
   }
   
-  .pacman{
+  #pacman{
     display: flex;
   }
  
-  .snake{
+  #snake{
     display: flex;
   }
-  .space{
+  #space{
     display: flex;
   }
-  #game_image_space{
-    padding: 30px;
-    border-radius: 30%;
-    height: 500px;
-    weight: 100px;
+  .game_image {
+    margin: 0 30px 10px 30px;
+    border-radius: 15%;
+    height: 400px;
   }
 
-  #game_image_pac{
-    padding: 30px;
-    border-radius: 30%;
-    height: 500px;
-    weight: 100px;
-  }
-
-  #game_image_snake{
-    padding: 30px;
-    border-radius: 30%;
-    height: 500px;
-    weight: 100px;
-  }
-
-  #game_title{
+  .game_title{
     text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-transform: capitalize;
   }
 
-  .text_place{
-    padding: 20px;
+  .text_place {
+    padding: 30px;
     background-color: turquoise;
-    border-radius: 10%;
+    border-radius: 15%;
     border-color: black 10px;
     text-align: justify;
     margin-bottom: 20px;
-  }
+    width: 500px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.text_place p {
+  font-size: 20px;
+}
 
 #button {
   margin-left: 420px;
+}
+
+.game_btn .btn {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.sidebar a:hover {
+  color: #000000;
+  text-decoration: none;
 }

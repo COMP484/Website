@@ -48,6 +48,10 @@ export default class Ghost {
     setNormal = () => {
         this.setVelocity(100);
         this.sprite.loadTexture(this.spritesheets.normal.name, 0);
+        if (!this.sprite.alive) {
+            this.sprite.x = (13 * 16) + 8;
+            this.sprite.y = (14 * 16) + 8;
+        }
         this.sprite.revive();
     }
 
@@ -97,7 +101,7 @@ export default class Ghost {
     }
 
     checkDirection = (direction, game) => {
-                if (this.turnDirection == direction) {
+        if (this.turnDirection == direction) {
             return;
         } else if (this.adjacentTiles[direction] == null) {
             return;
@@ -105,6 +109,10 @@ export default class Ghost {
             return;
         }
 
+        // Is ghost inside entrance box? Then only go up.
+        if (this.adjacentTiles[this.directions.up].x == 13 && this.adjacentTiles[this.directions.up].y == 14) {
+            this.turningNow = this.directions.up;
+        }
 
         this.turningNow = direction;
 
@@ -137,6 +145,7 @@ export default class Ghost {
         var i = game.layer.index;
         var x = this.marker.x;
         var y = this.marker.y;
+
         this.adjacentTiles[this.directions.left] = game.map.getTileLeft(i, x, y);
         this.adjacentTiles[this.directions.right] = game.map.getTileRight(i, x, y);
         this.adjacentTiles[this.directions.up] = game.map.getTileAbove(i, x, y);
