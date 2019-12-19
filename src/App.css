@@ -43,7 +43,7 @@
     position: relative;
     width: 900px;
     margin: 0 auto;
-    height: 500px;
+    height: 700px;
     overflow: hidden;
     white-space: nowrap;
   }
@@ -114,13 +114,8 @@
   .pacman{
     display: flex;
   }
-  .pong{
-    display: flex;
-  }
+ 
   .snake{
-    display: flex;
-  }
-  .frogger{
     display: flex;
   }
   .space{
@@ -131,6 +126,10 @@
     border-radius: 30%;
     height: 300px;
     weight: 100px;
+  }
+
+  #game_title{
+    text-align: center;
   }
 
   .text_place{
