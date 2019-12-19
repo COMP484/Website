@@ -12,7 +12,7 @@ export class Game extends Component {
                     alt="new" id ="game_image_pac"/>
                     
                     <aside class="text_place">
-                        <p>eleased in 1980 by Namco, <br />
+                        <p>Released in 1980 by Namco, <br />
                         Pac-Man is a classic arcade <br />
                         game where the iconic character <br />
                         must devour as many dots as he can while <br />
@@ -33,7 +33,7 @@ export class Game extends Component {
                 </div>
                 <h1 id="game_title">snake</h1>
                 <div class ="snake">
-                    <img  src="https://cdn.glitch.com/d9c9199f-96e8-49b7-957a-282b4597a023%2Fsnake.png?v=1576715399393"
+                    <img  src="https://cdn.glitch.com/d9c9199f-96e8-49b7-957a-282b4597a023%2Fsnake.png?v=1576725395513"
                     alt="new" id ="game_image_snake" />
 
                     <aside class="text_place">

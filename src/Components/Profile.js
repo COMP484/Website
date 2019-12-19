@@ -104,20 +104,34 @@ function Profile() {
                 </section>
 
                 {/* Contains Pertinent News */}
+                <h2 class="right">profile New</h2>
                 <aside id="news" class="right">
-
-                    <h3 class="header-bold">Profile News</h3>
+                    <h3 class="header-bold">After coding this Project</h3>
                     <p>This is the <q>breaking news</q> for today.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus turpis massa tincidunt dui ut ornare lectus sit.
-                        Elit pellentesque habitant morbi tristique senectus. Morbi tristique senectus et netus et malesuada. Gravida dictum fusce ut placerat. Et egestas quis ipsum suspendisse ultrices.
-                        Ac turpis egestas maecenas pharetra convallis posuere morbi leo. Elementum sagittis vitae et leo duis ut diam quam. Velit ut tortor pretium viverra suspendisse. Vulputate odio ut
-                        enim blandit volutpat maecenas volutpat blandit aliquam. Lectus magna fringilla urna porttitor rhoncus dolor purus non. Gravida quis blandit turpis cursus in hac habitasse platea
-                        dictumst. Justo donec enim diam vulputate ut. Velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum. Vulputate eu scelerisque felis imperdiet proin fermentum leo.
-                        Elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl. Pellentesque habitant morbi tristique senectus. Sodales ut etiam sit amet. Suspendisse interdum consectetur
-                        libero id faucibus. Aliquet lectus proin nibh nisl condimentum id venenatis a.</p>
-                    <p>Nisl rhoncus mattis rhoncus urna. In fermentum posuere urna nec tincidunt praesent semper feugiat. Sapien faucibus et molestie ac feugiat sed lectus. Posuere lorem ipsum dolor sit
-                        amet consectetur. Convallis tellus id interdum velit laoreet id donec. Vitae turpis massa sed elementum tempus. Molestie nunc non blandit massa enim nec. Massa vitae tortor condimentum
-                        lacinia. In ornare quam viverra orci sagittis. Vitae congue mauris rhoncus aenean. Feugiat scelerisque varius morbi enim.</p>
+                    <h2>Haemin Lee</h2>
+                    <p>
+                        It was good project to get practice about react.js most hard part was learning react in fast
+                        -paced. Specially it was end of semester, and many project and exam was coming at same time.
+                        I had hard time managing time. However, it was good chance to learn about react and use in
+                        real project.
+                    </p>
+                    <h2>Ian Iskra</h2>
+                    <p></p>
+                    <h2>Angelica G Flores</h2>
+                    <p></p>
+                    <h2>Aleks Trifonova</h2>
+                    <p>
+                        While coding this project I learned that game developement is not just limited to frameworks 
+                        but can be made in pure html and javascript as shown by our comparison with snake and the other two games. 
+                        Despite the frameworks making it easier to develop the games and add extra fun things, developing them
+                        in pure html and javascript works just as well. This project was a great opportunity to use github and version 
+                        control and manage many different moving parts in order to complete the project a timely manner. 
+                    </p>
+                    <h2>Alexis Siguenza</h2>
+                    <p>
+                        Throughout this project, I gained a lot of valuable experience 
+                    </p>
+                    
 
                 </aside>
 
