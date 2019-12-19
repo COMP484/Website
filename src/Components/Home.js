@@ -10,10 +10,12 @@ export class Home extends Component {
         return (
             <div>
                 <div>
+                    {/* call Slideshow */}
                     <Slideshow />
                 </div>
                 
                 <div id ="cardContainer">
+                    {/* call cards */}
                     <div class = "cardOne">
                         <Noteone />
                     </div>

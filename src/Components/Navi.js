@@ -16,7 +16,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 
 export class Navi extends Component {
-    
+    //navigation
   render() {
         const {classes} = this.props;
       
@@ -24,6 +24,7 @@ export class Navi extends Component {
     <div className ="sidebar">
       <AppBar position="static">
         <Toolbar id>
+          {/* menu for navigation */}
         <Typography variant="h3">
              Gameboard
         </Typography>
@@ -39,6 +40,7 @@ export class Navi extends Component {
         </Toolbar>
       </AppBar>
     <Switch>
+      {/* switch connection */}
         <Route path="/home" component={Navi}/>
         <Route path="/" />
         <Route path="/game" component={Game}/>

@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import './App.css';
 import Navi from './Components/Navi';
@@ -15,10 +14,12 @@ function App() {
     <Router>
     <div className="App">
       <header className="App-header">
+        {/* put navi always on the top */}
       <Navi></Navi>
       </header>
       <div className = "App-body">
         <Switch>
+          {/* since we are using switch, it will be changed all the time when ever we click navi menu */}
         <Route exact path="/" component={Home}/>
         <Route exact path="/home" component={Navi}/>
         <Route path="/game" component={Game}/> 
