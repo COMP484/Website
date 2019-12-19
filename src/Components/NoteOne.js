@@ -40,9 +40,9 @@ export default function NoteOne() {
           Haemin Lee {bull} Ian Iskra
         </Typography>
         <Typography variant="body2" component="p">
-          well meaning and kindly.
+         navi, home, and game component -use react.js bootstrap, material ui and io <br />
+         profile component - use react.js
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
     </Card>

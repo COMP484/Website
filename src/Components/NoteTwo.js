@@ -35,12 +35,14 @@ export default function NoteTwo() {
           phaser.io
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Angelica G Flores {bull} Aleks Trifonova {bull} Alexis
+          Angelica G Flores {bull} Aleks Trifonova {bull} Alexis Siguenza
         </Typography>
         <Typography variant="body2" component="p">
-          well meaning and kindly.
+          Pac-Man - infinite version, written in Phaser 2 and javascript<br />
+          Snake - classic version, written in html and javascript <br />
+          Space - modern twist version, written in Phaser 3 and javascript<br />
+
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
     </Card>

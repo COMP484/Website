@@ -121,10 +121,24 @@
   .space{
     display: flex;
   }
-  .game_image{
+  #game_image_space{
     padding: 30px;
     border-radius: 30%;
-    height: 300px;
+    height: 500px;
+    weight: 100px;
+  }
+
+  #game_image_pac{
+    padding: 30px;
+    border-radius: 30%;
+    height: 500px;
+    weight: 100px;
+  }
+
+  #game_image_snake{
+    padding: 30px;
+    border-radius: 30%;
+    height: 500px;
     weight: 100px;
   }
 
@@ -133,10 +147,12 @@
   }
 
   .text_place{
-    padding: 100px;
+    padding: 20px;
     background-color: turquoise;
-    border-radius: 30%;
+    border-radius: 10%;
     border-color: black 10px;
+    text-align: justify;
+    margin-bottom: 20px;
   }
 
 #button {
