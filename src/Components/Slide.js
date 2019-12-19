@@ -1,5 +1,5 @@
 import React from 'react'
-
+//setting the image array style
 const Slide = ({ image }) => {
   const styles = {
     backgroundImage: `url(${image})`,
